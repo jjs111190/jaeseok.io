@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
+        }
+        .register-wrapper {
+            width: 400px;
+            padding: 40px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .register-wrapper h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .register-wrapper input[type="text"],
+        .register-wrapper input[type="password"],
+        .register-wrapper input[type="email"],
+        .register-wrapper input[type="tel"] {
+            width: 100%;
+            height: 48px;
+            padding: 0 10px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            background-color: #F8F8F8;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        .register-wrapper input[type="submit"] {
+            width: 100%;
+            height: 48px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .register-wrapper input[type="submit"]:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-wrapper">
+        <h2>회원가입</h2>
+        <form method="post" action="php/register.php" id="register-form">
+            <input type="text" name="userName" placeholder="사용자 아이디" required>
+            <input type="text" name="nickname" placeholder="닉네임" required>
+            <input type="text" name="fullName" placeholder="이름" required>
+            <input type="email" name="email" placeholder="이메일" required>
+            <input type="tel" name="phone" placeholder="전화번호" required>
+            <input type="password" name="userPassword" placeholder="비밀번호" required>
+            <input type="submit" value="가입">
+        </form>
+    </div>
+</body>
+</html>

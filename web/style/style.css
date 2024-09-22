@@ -1,0 +1,630 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+.custom-color {
+  color: #ECDFCC; /* 원하는 색상 코드 */
+}
+header {
+  position: fixed; /* 화면에 고정 */
+top: 0; /* 상단에 고정 */
+width: 100%; /* 화면 전체 너비 */
+background-color: white; /* 헤더 배경색 */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 효과 */
+z-index: 1000; /* 다른 요소 위에 오도록 z-index 설정 */
+}
+nav {
+  background-color: #1E201E;
+  padding: 20px 0; /* 패딩 추가 */
+  position: fixed; /* 스크롤시 고정되도록 */
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: padding 0.3s ease; /* 패딩의 변화를 부드럽게 */
+  z-index: 1000;
+  
+}
+
+/* 내비게이션 링크 스타일 */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em; /* 기본 글씨 크기 */
+  transition: font-size 0.3s ease; /* 글씨 크기 변화도 부드럽게 */
+}
+
+nav ul li a:hover {
+  color: #ccc; /* 링크에 마우스가 올라갔을 때 색상 변화 */
+}
+/* 기본 스타일 */
+nav ul.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+/* 햄버거 메뉴 기본 스타일 */
+.hamburger {
+  display: none; /* 기본적으로 숨김 */
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* 화면 크기가 768px 이하일 때 반응형 설정 */
+
+
+/* 햄버거 메뉴 활성화 스타일 */
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0; /* 중간 막대 숨기기 */
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg); /* 첫 번째 막대 회전 */
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg); /* 마지막 막대 회전 */
+}
+.hide-header {
+  top: -60px; /* 헤더를 화면 위로 숨김 */
+  transition: top 0.3s ease;
+}
+.hero {
+  background-image: url('../image/background.png'); /* 이미지 URL을 대체하세요 */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 세로 정렬: 아래쪽 */
+  align-items: center; /* 가로 정렬: 중앙 */
+  padding-bottom: 300px; /* 아래쪽 여백 조정 */
+
+}.hero1 {
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 정렬 */
+  justify-content: center; /* 세로 중앙 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+  height: 40vh; /* 전체 화면 높이 사용 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  justify-content: flex-end; /* 세로 정렬: 아래쪽 */
+  align-items: center; /* 가로 정렬: 중앙 */
+  padding-bottom: 100px; /* 아래쪽 여백 조정 */
+  color:black;
+
+}
+.hero2 {
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 정렬 */
+  justify-content: center; /* 세로 중앙 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+  height: 35vh; /* 전체 화면 높이 사용 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  justify-content: flex-end; /* 세로 정렬: 아래쪽 */
+  align-items: center; /* 가로 정렬: 중앙 */
+  padding-bottom: 30px; /* 아래쪽 여백 조정 */
+  color:black;
+  margin-bottom: 50px; /* 섹션 간 간격 추가 */
+
+}
+.hero3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 세로 중앙 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+  height: 100%; /* 전체 화면 높이 사용 */
+  text-align: left; /* 텍스트 중앙 정렬 */
+  padding-bottom: 30px; /* 아래쪽 여백 조정 */
+  color: black;
+}
+.hero4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 세로 중앙 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+  min-height: 30vh;/* 전체 화면 높이 사용 */
+  text-align: left; /* 텍스트 중앙 정렬 */
+  padding-bottom: 10px; /* 아래쪽 여백 조정 */
+  color: black;
+  margin-top: 60px;
+}.hero5 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: left; /* 텍스트 중앙 정렬 */
+  padding-bottom: 10px; /* 아래쪽 여백 조정 */
+  padding-top:15px;
+  font-size: 20px;
+  color: black;
+}.hero6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* 섹션의 전체 높이를 사용하여 세로 중앙 정렬 */
+  text-align: left; /* 텍스트 중앙 정렬 */
+  justify-content: flex-end; /* 세로 정렬: 아래쪽 */
+  align-items: center; /* 가로 정렬: 중앙 */
+  padding-bottom: 10px; /* 아래쪽 여백 조정 */
+  color:black;
+
+}
+.hero7 {
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 정렬 */
+  justify-content: center; /* 세로 중앙 정렬 */
+  align-items: center; /* 가로 중앙 정렬 */
+  height: 100%; /* 전체 화면 높이 사용 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  justify-content: flex-end; /* 세로 정렬: 아래쪽 */
+  align-items: center; /* 가로 정렬: 중앙 */
+  padding-bottom: 30px; /* 아래쪽 여백 조정 */
+  color:black;
+  margin-bottom: 50px; /* 섹션 간 간격 추가 */
+
+}
+.hero-content h1 {
+  font-size: 5em;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+button {
+  background-color: #3C3D37;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #697565;
+}
+
+.product-info {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f5f5f7;
+}
+
+.product-info h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+footer {
+  color: black;
+  text-align: center;
+  padding: 20px 0;
+}
+.footer1 {
+  background-color: #1E201E ;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+/* 제품 섹션 스타일 */
+.product-info {
+text-align: center; /* 텍스트 및 이미지 가운데 정렬 */
+padding: 50px 0; /* 상하 여백 */
+background-color: #f5f5f7; /* 배경색 */
+}
+
+.product-info h2 {
+font-size: 2.5em;
+margin-bottom: 20px;
+}
+
+.product-info img {
+max-width: 100%; /* 이미지 크기를 컨테이너 너비에 맞춤 */
+height: auto; /* 이미지 비율 유지 */
+margin-bottom: 30px;
+}
+
+.product-info p {
+font-size: 1.2em;
+margin: 10px 0;
+}
+
+.product-info button {
+background-color: #697565;
+color: white;
+border: none;
+padding: 10px 20px;
+margin: 10px;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.product-info button:hover {
+background-color: #697565;
+}
+/* 그리드 레이아웃 스타일 */
+.product-grid {
+background-color: #f5f5f7;
+padding: 50px 0;
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 반응형 그리드 */
+gap: 20px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.grid-item {
+background-color: white;
+padding: 20px;
+text-align: center;
+border-radius: 10px; /* 모서리 둥글게 */
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+position: relative; /* 자식 요소를 절대 위치로 조정하기 위해 필요 */
+overflow: hidden; /* 내용이 넘치지 않도록 처리 */
+}
+
+.grid-item img {
+width: 100%; /* 그리드 아이템의 폭에 맞춤 */
+height: auto; /* 비율 유지 */
+border-radius: 10px; /* 이미지 모서리 둥글게 */
+display: block; /* 중앙 정렬을 위한 설정 */
+}
+
+.grid-item h3 {
+font-size: 1.5em;
+margin-bottom: 10px;
+}
+
+.grid-item p {
+font-size: 1.1em;
+margin-bottom: 15px;
+}
+
+.grid-item button {
+background-color: #333;
+color: white;
+border: none;
+padding: 10px 20px;
+margin: 10px;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.grid-item button:hover {
+background-color: #3C3D37;
+}
+/* 슬라이더 컨테이너 스타일 */
+.slider {
+position: relative;
+width: 100%;
+overflow: hidden;
+}
+
+.slides {
+display: flex;
+width: 100%;
+height: auto;
+animation: slide 20s infinite; /* 자동으로 슬라이드되는 애니메이션 */
+}
+
+.slide {
+width: 100%;
+flex-shrink: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.slide img {
+  width: 100%; /* 슬라이드 너비에 맞게 조정 */
+  height: auto; /* 비율 유지 */
+  max-height: 700px; /* 최대 높이 설정 */
+  object-fit: cover; /* 비율 유지하면서 이미지가 슬라이드 영역을 채우도록 */
+}
+figure.snip1132 {
+position: relative;
+margin: 0; /* 여백 제거 */
+border-radius: 10px; /* 박스 둥글게 처리 */
+overflow: hidden; /* 내용이 넘치지 않도록 처리 */
+}
+
+figure.snip1132 * {
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-transition: all 0.45s ease-in-out;
+transition: all 0.45s ease-in-out;
+}
+
+figure.snip1132 img {
+max-height: 100%;
+position: relative;
+opacity: 1;
+}
+
+figure.snip1132 figcaption {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); /* 중앙 정렬 */
+text-align: center; /* 텍스트 중앙 정렬 */
+color: white; /* 글씨 색상 설정 */
+}
+
+figure.snip1132 .heading {
+overflow: hidden;
+-webkit-transform: translateY(-50%);
+transform: translateY(-50%);
+}
+
+figure.snip1132 .caption {
+overflow: hidden;
+-webkit-transform: translateY(50%);
+transform: translateY(50%);
+position: absolute;
+width: 100%;
+bottom: 0;
+}
+
+figure.snip1132 h3 {
+display: block; /* 블록 요소로 변경하여 중앙 정렬 */
+margin: 10px 0; /* 여백 설정 */
+text-align: center; /* 중앙 정렬 */
+color: white;
+}
+
+figure.snip1132 h3 span,
+figure.snip1132 p span {
+font-weight: 800px;
+}
+
+
+
+figure.snip1132 h3:before,
+figure.snip1132 p:before {
+left: -1000%;
+}
+
+figure.snip1132 h3:after,
+figure.snip1132 p:after {
+right: -1000%;
+}
+
+figure.snip1132 h3:before,
+figure.snip1132 h3:after {
+top: 50%;
+}
+
+figure.snip1132 p {
+font-size: 1em;
+font-weight: 500;
+}
+
+figure.snip1132 p:before,
+figure.snip1132 p:after {
+bottom: 50%;
+}
+
+figure.snip1132 a {
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+position: absolute;
+z-index: 1;
+}
+
+figure.snip1132:hover img,
+figure.snip1132.hover img {
+opacity: 1;
+-webkit-transform: scale(1.15);
+transform: scale(1.15);
+transition: transform 0.3s ease, opacity 0.3s ease;
+}
+figure.snip1132 h3 {
+color: rgb(255, 255, 255); /* 글씨 색상 설정 */
+transition: font-size 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+figure.snip1132:hover h3 {
+font-size: 2em; /* 글씨 크기를 20% 키움 */
+}
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.search-container {
+  position: relative; /* 상대 위치 지정 */
+  width: 80%; /* 부모 요소의 80%로 설정 */
+  max-width: 800px; /* 최대 너비 설정 */
+}
+
+.search-container input {
+  width: 100%; /* 부모 요소의 100%로 설정 */
+  padding: 10px 40px 10px 10px; /* 오른쪽 여백에 패딩 추가하여 아이콘 여유 공간 확보 */
+  font-size: 1.2em; /* 'm'에서 'em'으로 수정 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-container img {
+  position: absolute; /* 절대 위치 지정 */
+  right: 10px; /* 오른쪽 여백 */
+  top: 50%; /* 수직 중앙 정렬 */
+  transform: translateY(-50%); /* 중앙 정렬을 위해 수직으로 이동 */
+  width: 20px; /* 아이콘 크기 조정 */
+  height: 20px; /* 아이콘 크기 조정 */
+}
+a {
+  text-decoration-line: none;
+  color: black;
+}
+.posts {
+  width: 100%;
+  max-width: 800px; /* 필요에 따라 조정 */
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* 게시물을 세로로 쌓기 */
+}
+
+.post {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 15px; /* 패딩 조정 */
+  text-align: left;
+  width: 100%; /* 각 게시물이 부모 요소의 전체 너비를 차지하도록 */
+  max-width: 800px; /* 균일성을 보장 */
+  margin-bottom: 15px; /* 게시물 간의 여백 */
+}
+.post:last-child {
+  border-bottom: none;
+}
+.post-title {
+  font-size: 1.2em;
+  color: #333;
+}
+.post-meta {
+  font-size: 0.9em;
+  color: #777;
+}.form-alert {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  border-radius: 12px;
+  background-clip: padding-box;
+  padding: .66667rem .88889rem;
+  margin-bottom: 17px;
+  margin-top: 17px;
+  color: #1d1d1f;
+  border: 1px solid #d2d2d7;
+  background-color: rgba(0, 0, 0, .02);
+}
+
+@keyframes slide {
+0% { transform: translateX(0); }
+33% { transform: translateX(-100%); }
+66% { transform: translateX(-200%); }
+100% { transform: translateX(0); }
+}
+/* 반응형 디자인 - 작은 화면 (모바일) */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+
+  .product-info h2 {
+    font-size: 2em;
+  }
+  nav ul.nav-links {
+    display: none; /* 기본적으로 메뉴 숨김 */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #1E201E;
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  nav ul.nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex; /* 햄버거 메뉴 표시 */
+  }
+}
+
+/* 매우 작은 화면 (초소형 모바일) */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .hero-content p {
+    font-size: 0.9em;
+  }
+
+  button {
+    font-size: 0.8em;
+    padding: 6px 12px;
+  }
+
+  .product-info h2 {
+    font-size: 1.5em;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+}
